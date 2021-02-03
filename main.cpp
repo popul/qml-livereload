@@ -263,6 +263,8 @@ LiveReload::LiveReload(QQmlEngine * a_engine_handler
     QStringList *dirList;
     dirList = &list;
     this->subFoldersList(file.path(), dirList);
+	this->subFoldersList(".", dirList);
+
     watcher.addPaths(*dirList);
 
 	connect(&watcher, SIGNAL(directoryChanged(const QString &)),
